@@ -61,6 +61,13 @@
                 <li> Date | date: 'fullTime' </li>
                 <li> Date | date: 'MMMM dd, YYYY' </li>
             </ol>
+
+            <hr>
+            <ol>
+                <li> Date | date: 'long':'GMT-6' </li>
+                <li> Date | date: 'long':'GMT-4' </li>
+            </ol>
+
         </p-card>
     </div>
 
@@ -82,6 +89,14 @@
                 <li>{{ date | date: 'fullTime' }}</li>
                 <li>{{ date | date: 'MMMM dd, YYYY' }}</li>
             </ol>
+
+            <hr>
+            <ol>
+                <li>{{ date | date: 'long':'GMT-6' }}</li>
+                <li>{{ date | date: 'long':'GMT-4' }}</li>
+                <li>{{ date | date: 'long':'GMT-5':'fr' }}</li>
+            </ol>
+            
         </p-card>
     </div>
 </div>

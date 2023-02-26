@@ -11,8 +11,11 @@ import { SharedModule } from './shared/shared.module';
 // Change the Locale of the App
 import localeEs from '@angular/common/locales/es-CO';
 import { registerLocaleData } from '@angular/common';
-
 registerLocaleData( localeEs );
+
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData( localeFr );
+
 
 @NgModule({
   declarations: [
