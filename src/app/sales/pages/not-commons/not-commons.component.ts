@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-not-commons',
   templateUrl: './not-commons.component.html'
 })
-export class NotCommonsComponent {
-
-}
+export class NotCommonsComponent {}
