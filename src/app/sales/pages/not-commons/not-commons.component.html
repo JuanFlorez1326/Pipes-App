@@ -33,4 +33,55 @@
             ></button>
         </p-fieldset>
     </div>
+
+    <div class="col md:col-6 sm:col-12">
+        <p-fieldset legend="SlicePipe" [toggleable]="true" [transitionOptions]="'.3s'">
+            
+            <strong>Original</strong>
+            <pre>{{ clients }}</pre>
+            <hr>
+
+            <strong>Slice: 0: 2</strong>
+            <pre>{{ clients | slice:0:2 }}</pre>
+
+            <strong>Slice: 1: 2</strong>
+            <pre>{{ clients | slice:1:2 }}</pre>
+            <hr>
+
+            <strong>{{ name }} - Slice: 1: 6</strong>
+            <pre>{{ name | slice:1:6 }}</pre>
+
+            <strong>{{ name }} - Slice: 0: 4</strong>
+            <pre>{{ name | slice:0:4 }}</pre>
+
+        </p-fieldset>
+    </div>
+
+    <div class="col md:col-6 sm:col-12">
+        <p-fieldset legend="JsonPipe" [toggleable]="true" [transitionOptions]="'.3s'">
+            <pre>{{ heroes | json }}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="col md:col-6 sm:col-12">
+        <p-fieldset legend="KeyValuePipe" [toggleable]="true" [transitionOptions]="'.3s'">
+            <ul>
+                <li *ngFor="let item of person | keyvalue">
+                    <strong>{{ item.key | titlecase }}:</strong> {{ item.value }}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+
+    
+    <div class="col md:col-6 sm:col-12">
+        <p-fieldset legend="AsyncPipe" [toggleable]="true" [transitionOptions]="'.3s'">
+            <pre>Observable: {{ myObservable | async }}</pre>
+            <pre *ngIf="!(valuePromise | async); else seePromise">Promise: Loading...</pre>
+            <ng-template #seePromise>
+                <pre>Promise: {{ valuePromise | async }}</pre>
+            </ng-template>
+        </p-fieldset>
+    </div>
+
 </div>
