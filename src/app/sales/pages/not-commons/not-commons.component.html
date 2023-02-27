@@ -6,13 +6,31 @@
 <div class="grid">
     <div class="col md:col-6 sm:col-12">
         <p-fieldset legend="I18nSelectPipe" [toggleable]="true" [transitionOptions]="'.3s'">
-            Content I18nSelectPipe
+            <p>
+                Saludos {{ name }}, es un placer {{ gender | i18nSelect: invitationMap }} a nuestra pagina de Pipes.
+            </p>
+            <button 
+                (click)="changeClient()" 
+                pButton pRipple 
+                type="button" 
+                label="Change Person" 
+                class="p-button-raised p-button-success p-button-text"
+            ></button>
         </p-fieldset>
     </div>
 
     <div class="col md:col-6 sm:col-12">
         <p-fieldset legend="I18nPluralPipe" [toggleable]="true" [transitionOptions]="'.3s'">
-            Content I18nPluralPipe
+            <p>
+                Actualmente tenemos {{ clients.length | i18nPlural: clientsMap }}
+            </p>
+            <button
+                (click)="deleteClient()"
+                pButton pRipple 
+                type="button" 
+                label="Delete Client" 
+                class="p-button-raised p-button-danger p-button-text"
+            ></button>
         </p-fieldset>
     </div>
 </div>
